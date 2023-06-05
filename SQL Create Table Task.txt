@@ -1,0 +1,75 @@
+1. Movie should have multiple media(Video or Image) 2. Movie can belongs to multiple Genre 3. Movie can have multiple reviews and Review can belongs to a user 4. Artist can have multiple skills 5. Artist can perform multiple role in a single film
+
+Task
+
+.......................Create Movie Table ...........................
+
+CREATE TABLE Movie (
+    ID Primary key,
+    Title TEXT,
+    Image Text,
+    Video Text,
+    Year Integer,
+    Director Text
+);
+
+...Insert values to Movie Table...
+
+INSERT INTO Movie VALUES (1, "Toy Story 4", "https://lumiere-a.akamaihd.net/v1/images/p_toystory4_19639_917ad716.jpeg", "https://www.hotstar.com/in/movies/toy-story-4/1260015326", 2019, "Josh Cooley");
+
+INSERT INTO Movie VALUES (2, "John Wick", "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg", "https://www.imdb.com/title/tt2911666/", "2014", "Chad Stahelski")
+
+INSERT INTO Movie VALUES (3, "Enthiran", "https://play-lh.googleusercontent.com/m3T4s6u3-1mpKNwEBVQrVkUpt65CVAbr6ROBQkI7x2E000NLdITM6t2A8xuOK_ftvKI", "https://www.youtube.com/watch?v=2l3bZTyuh5g", "2011", "S. Shankar")
+
+.......................Create Artist Table ...........................
+
+CREATE TABLE Artist (
+	Movie_Id Integer,
+        Name Text,
+  	Role Text,
+  	skill Text
+);
+
+...Insert values to Artist Table...
+
+INSERT INTO Artist VALUES (1, "Bo Peep", "Heroen", "Power")
+INSERT INTO Artist VALUES (2, "Keanu Reeves", "Hero", "Fighter")
+INSERT INTO Artist VALUES (3, "Rajinikanth", "Hero", "Roobo")
+
+.......................Create Review Table ...........................
+
+CREATE TABLE Review (
+        Movie_Id Integer,
+        Name Text,
+  	Rating Float
+);
+
+...Insert Values to Review Table...
+
+INSERT INTO Artist VALUES (1, "Karthi", 8.2)
+INSERT INTO Artist VALUES (2, "Dhamu", 8.3)
+INSERT INTO Artist VALUES (3, "Karthi", 9.1)
+
+
+
+......................Join all Tables...........................
+
+SELECT *
+  FROM Movie
+  JOIN Artist
+  ON Movie.ID = Artist.Movie_Id
+  JOIN Review
+  ON Artist.Movie_Id = Review.Movie_Id;
+
+
+........................Thank You Have a Great Day !!!!....................
+
+
+
+
+
+
+
+
+
+
